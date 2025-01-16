@@ -8,6 +8,12 @@ h2 {
     font-weight: 600;
 }
 
+.mas{
+    max-width: 17px;
+    max-height: 17px;
+
+}
+
 .contenedorJoin {
     @include variables.tipoContenedor1(center);
     gap: 15px;
@@ -15,22 +21,20 @@ h2 {
     &-join {
         @include variables.rellenoContenedor(black, white, 12px 27px 12px 27px, 40px);
         font-weight: 600;
-        &:hover{
-            background-color:variables.$colorFuente3;
+
+        &:hover {
+            background-color: variables.$colorFuente3;
         }
     }
-    &-contenedorPersonas{
+
+    &-contenedorPersonas {
         @include variables.tipoContenedor1(center);
-        &-persona{
-            width: 42px; 
-            height: 42px;
-            object-fit: cover; 
-            border-radius: 50%; 
-            overflow: hidden; 
-            border: 2px solid #ddd; 
+
+        &-persona {
+            @include variables.fotoPequeRedonda();
         }
     }
-    
+
     &-miembros {
         color: variables.$colorFuente2;
         font-size: 14.2px;
@@ -71,7 +75,7 @@ h2 {
 .main {
     &-seccion1 {
         @include variables.tipoContenedor1(center);
-        @include variables.tipoContenedor1Complemento(100px,100px);
+        @include variables.tipoContenedor1Complemento(100px, 100px);
 
         &-contenedor {
             @include variables.tipoContenedor1(center);
@@ -79,7 +83,7 @@ h2 {
             flex-direction: column;
 
             &-imagenProducto1 {
-                width: 190px;   
+                width: 190px;
             }
 
             h1 {
@@ -91,16 +95,16 @@ h2 {
             }
         }
 
-        &-contenedorEmpresas{
-            
-            h5{
+        &-contenedorEmpresas {
+
+            h5 {
                 @include variables.textoGrandeGris();
                 font-size: 15.2px;
                 color: variables.$colorFuente3;
                 padding-bottom: 20px;
             }
 
-            &-iconos{
+            &-iconos {
                 display: flex;
                 gap: 41px;
             }
@@ -108,21 +112,21 @@ h2 {
 
     }
 
-    &-seccion2{
+    &-seccion2 {
         @include variables.tipoContenedor1(center);
-        @include variables.tipoContenedor1Complemento(15px,150px);
+        @include variables.tipoContenedor1Complemento(15px, 150px);
         background-color: variables.$colorFondo1;
 
-        &-contenido{
+        &-contenido {
             list-style: none;
             @include variables.titulo();
 
-            &-titulo{
+            &-titulo {
                 padding-bottom: 10px
             }
         }
 
-        &-join{
+        &-join {
             @include variables.rellenoContenedor(white, black, 10px 22px 10px 22px, 40px);
             box-shadow: 0.3px 0px 2px rgba(0, 0, 0, 0.5);
             font-weight: 600;
@@ -130,20 +134,21 @@ h2 {
 
     }
 
-    &-seccion3{
+    &-seccion3 {
         @include variables.tipoContenedor1(center);
-        @include variables.tipoContenedor1Complemento(40px,100px);
-        h3{
+        @include variables.tipoContenedor1Complemento(40px, 100px);
+
+        h3 {
             @include variables.titulo;
         }
 
-        &-contenido{
+        &-contenido {
             @include variables.tipoContenedor1(center);
             @include variables.textoGrandeGris();
             text-align: left;
-            gap:60px;
+            gap: 60px;
 
-            p{  
+            p {
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
@@ -153,48 +158,113 @@ h2 {
 
     }
 
-    &-seccion5{
+    &-seccion4 {
         @include variables.tipoContenedor1(center);
-        @include variables.tipoContenedor1Complemento(15px,150px);
-        h3{
+        @include variables.tipoContenedor1Complemento(50px, 100px);
+
+        &-titulo {
             @include variables.titulo();
         }
 
-        &-planes{
+        &-persona {
+            @include variables.fotoPequeRedonda();
+        }
+
+        &-opiniones {
+            display: grid;
+            grid-template-columns: repeat(3, 350px);
+            grid-auto-rows: min-content;
+            grid-auto-flow: row dense;
+            gap: 15px;
+
+            &-opion {
+                background-color: variables.$colorFondo1;
+                border-radius: 13px;
+                padding: 30px;
+                align-self: start;
+                cursor: pointer;
+                opacity: 0;
+                transform: translateX(100px);
+                transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+
+                blockquote {
+                    @include variables.textoGrandeGris();
+                    text-align: left;
+                    padding-bottom: 20px;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+
+                &-perfil {
+                    display: flex;
+                    gap: 10px;
+                    font-size: 12.5px;
+
+                    a {
+                        color: variables.$colorFuente1;
+                        text-decoration: none;
+                    }
+                }
+
+            }
+
+            &-opion.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+    }
+
+    &-seccion5 {
+        @include variables.tipoContenedor1(center);
+        @include variables.tipoContenedor1Complemento(15px, 150px);
+
+        h3 {
+            @include variables.titulo();
+        }
+
+        &-planes {
             @include variables.tipoContenedor1(center);
             gap: 15px;
-            &-plan{
+
+            &-plan {
                 @include variables.rellenoContenedor(variables.$colorFondo1, black, 45px 30px 70px 30px, 20px);
                 @include variables.textoGrandeGris();
-                &-lista{
-                    padding-bottom: 20px ;
+
+                &-lista {
+                    padding-bottom: 20px;
                     list-style: none;
                     text-align: left;
-                    li{
+
+                    li {
                         padding-bottom: 13px;
                     }
                 }
 
-                &-header{
+                &-header {
                     display: flex;
                     gap: 140px;
                     padding-bottom: 10px;
                 }
 
-                &-tiempo{
+                &-tiempo {
                     color: black;
                     font-size: 25px;
                     text-align: left;
                 }
 
-                &-tiempo2{
+                &-tiempo2 {
                     color: black;
                     font-size: 25px;
                     text-align: left;
                     padding-bottom: 15px;
                 }
 
-                &-precio{
+                &-precio {
                     @include variables.titulo();
                     font-weight: 700;
                     font-size: 55px;
@@ -203,18 +273,20 @@ h2 {
                     padding-bottom: 30px;
                 }
 
-                &-promo{
+                &-promo {
                     @include variables.rellenoContenedor(#D4FFE1, #49D676, 5px 15px 5px 15px, 40px);
 
                 }
 
-                &-boton{
+                &-boton {
                     @include variables.rellenoContenedor(black, white, 12px 90px 12px 90px, 40px);
-                    &:hover{
-                        background-color:variables.$colorFuente3;
+
+                    &:hover {
+                        background-color: variables.$colorFuente3;
                     }
                 }
-                &-boton2{
+
+                &-boton2 {
                     @include variables.rellenoContenedor(white, black, 12px 90px 12px 90px, 40px);
                     box-shadow: 0.3px 0px 2px rgba(0, 0, 0, 0.5);
                 }
@@ -223,8 +295,10 @@ h2 {
 
     }
 
+    &-seccion6{
+
+    }
 
 
 }
-
 

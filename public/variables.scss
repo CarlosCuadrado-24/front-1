@@ -39,13 +39,11 @@ $colorFondo1: #fafafa;
     color:$colorFuente1;
 }
 
-
-
-// @mixin tipoContenedor1-gap($justify: start, $gap: 0) {
-//   @include tipoContenedor1($justify);
-//   gap: $gap;
-// }
-
-// @function px-to-rem($px, $base: 16) {
-//   @return $px / $base * 1rem;
-// }
+@mixin fotoPequeRedonda(){
+    width: 42px; 
+    height: 42px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    border: 2px solid #ddd; 
+}
