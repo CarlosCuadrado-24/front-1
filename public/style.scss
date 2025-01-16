@@ -5,7 +5,7 @@ h2 {
     text-transform: uppercase;
     color: variables.$colorFuente3;
     font-size: 13px;
-    font-weight: 20px;
+    font-weight: 600;
 }
 
 .contenedorJoin {
@@ -71,9 +71,7 @@ h2 {
 .main {
     &-seccion1 {
         @include variables.tipoContenedor1(center);
-        flex-direction: column;
-        gap: 100px;
-        padding: 100px;
+        @include variables.tipoContenedor1Complemento(100px,100px);
 
         &-contenedor {
             @include variables.tipoContenedor1(center);
@@ -94,10 +92,17 @@ h2 {
         }
 
         &-contenedorEmpresas{
+            
             h5{
                 @include variables.textoGrandeGris();
                 font-size: 15.2px;
                 color: variables.$colorFuente3;
+                padding-bottom: 20px;
+            }
+
+            &-iconos{
+                display: flex;
+                gap: 41px;
             }
         }
 
@@ -105,21 +110,46 @@ h2 {
 
     &-seccion2{
         @include variables.tipoContenedor1(center);
-        flex-direction: column;
-        gap: 15px;
+        @include variables.tipoContenedor1Complemento(15px,150px);
         background-color: variables.$colorFondo1;
-        padding: 150px;
 
         &-contenido{
             list-style: none;
             @include variables.titulo();
+
+            &-titulo{
+                padding-bottom: 10px
+            }
         }
 
         &-join{
             @include variables.rellenoContenedor(white, black, 10px 22px 10px 22px, 40px);
             box-shadow: 0.3px 0px 2px rgba(0, 0, 0, 0.5);
-            font-weight: 600px;
+            font-weight: 600;
         }
+
+    }
+
+    &-seccion3{
+        @include variables.tipoContenedor1(center);
+        @include variables.tipoContenedor1Complemento(40px,100px);
+        h3{
+            @include variables.titulo;
+        }
+
+        &-contenido{
+            @include variables.tipoContenedor1(center);
+            @include variables.textoGrandeGris();
+            text-align: left;
+            gap:60px;
+
+            p{  
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+        }
+
 
     }
 

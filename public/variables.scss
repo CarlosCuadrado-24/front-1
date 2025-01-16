@@ -9,6 +9,12 @@ $colorFondo1: #fafafa;
   justify-content: $justify;
 }
 
+@mixin tipoContenedor1Complemento($gap,$padding) {
+    flex-direction: column;
+    gap: $gap;
+    padding: $padding;
+}
+
 @mixin rellenoContenedor($fondo,$colorLetra,$padding,$bordeRadius){
     background-color:$fondo;
     color: $colorLetra;
@@ -21,7 +27,7 @@ $colorFondo1: #fafafa;
     text-align: center;
     letter-spacing: -0.5;
     font-size: 50px;
-    font-weight: 100px;
+    font-weight: 600;
     line-height: 1em;
 }
 
