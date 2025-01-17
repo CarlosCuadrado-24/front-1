@@ -329,6 +329,97 @@ h2 {
         }
     }
 
+    &-seccion7{
+        @include variables.tipoContenedor1(center);
+        @include variables.tipoContenedor1Complemento(15px, 50px);
+        background-color: variables.$colorFondo1;
+        &-titulo{
+            @include variables.titulo();
+            color: black;
+        }
+        &-descripcion{
+            @include variables.textoGrandeGris();
+        }
+        &-join{
+            @include variables.rellenoContenedor(black, white, 12px 27px 12px 27px, 40px);
+            &:hover{
+                background-color: variables.$colorFuente3;
+            }
+        }
+        &-imagenes{
+            padding-top: 20px;
+            display: flex;
+            gap: 24px;
+            img{
+                border-radius: 20px;
+                width: 237.53px;
+            }
+        }
 
+    }
+
+}
+
+.footer{
+    padding: 40px;
+    &-contenedorSuperior{
+        @include variables.tipoContenedor1(space-between);
+        &-enlaces{
+            display: flex;
+            gap: 120px;
+            li{
+                list-style: none;
+                a{
+                    text-decoration: none;
+                    @include variables.textoGrandeGris();
+                    &:hover{
+                        color: white;
+                    }
+                }
+            }
+            h6{
+                font-size: 16px;
+                font-weight: 500
+            }
+        }
+
+        &-titulo{
+            color: black;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        &-articulo{
+            padding-top: 30px;
+            display: flex;
+            gap: 20px;
+            a{
+                @include variables.rellenoContenedor(black, white, 12px 30px 12px 30px, 40px);
+                font-weight: 500
+            }
+            input{
+                padding: 12px 50px 12px 50px;
+                border-radius: 40px;
+                border-color: variables.$colorFuente2;
+                background-color: #fafafa;
+                @include variables.textoGrandeGris();
+                text-align: left;
+                font-size: 18px;
+            }   
+
+        }
+
+        #contenedorJoinFinal {
+            padding-top: 20px;
+            @include variables.tipoContenedor1(left);
+        }
+    }
+    &-contenedorInferior{
+        @include variables.tipoContenedor1(space-between);
+        @include variables.textoGrandeGris();
+        padding-top: 125px;
+        text-transform: uppercase;
+        color: variables.$colorFuente2;
+    }
 }
 
