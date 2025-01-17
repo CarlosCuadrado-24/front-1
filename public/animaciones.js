@@ -6,11 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.add("visible");
             }
             else {
-                entry.target.classList.remove("visible"); 
+                // (entry.target as HTMLElement).classList.remove("visible"); 
             }
         });
-    }, { threshold: 0.2 } 
-    );
+    }, { threshold: 0.2 });
     opiniones.forEach(function (opinion) {
         observer.observe(opinion);
     });

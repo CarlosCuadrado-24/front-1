@@ -221,7 +221,7 @@ h2 {
 
     &-seccion5 {
         @include variables.tipoContenedor1(center);
-        @include variables.tipoContenedor1Complemento(15px, 150px);
+        @include variables.tipoContenedor1Complemento(15px, 100px);
 
         h3 {
             @include variables.titulo();
@@ -296,7 +296,37 @@ h2 {
     }
 
     &-seccion6{
-
+        @include variables.tipoContenedor1(center);
+        @include variables.tipoContenedor1Complemento(15px, 90px);
+        h3{
+            @include variables.titulo();
+            padding-bottom: 25px;
+        }
+        &-preguntas{
+            width: 47%;
+            background-color: variables.$colorFondo1;
+            &-contenedor{
+                padding: 10px;
+                h5{
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+                p{
+                    @include variables.textoGrandeGris();
+                    text-align: left;
+                }
+                &-pregunta{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 20px;
+                }
+                button{
+                    border: none;
+                    cursor: pointer;
+                    background-color: variables.$colorFondo1;
+                }
+            }
+        }
     }
 
 
